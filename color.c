@@ -41,18 +41,17 @@ unsigned int calculate_b(Pnm_rgb rgb)
     return b;
 }
 
-void color_to_bw(int i, int j, UArray2_T arr, void *elem, void *cl)
+void color_to_bw(int i, int j, A2Methods_Object *arr, void *elem, void *cl)
 {
     (void) elem;
     (void) cl;
-    printf("here");
     Pnm_rgb rgbValues = UArray2_at(arr, i, j);
     rgbValues->red = calculate_Y(rgbValues);
     rgbValues->green = calculate_Pb(rgbValues);
     rgbValues->blue = calculate_Pr(rgbValues);
 }
 
-void bw_to_color(int i, int j, UArray2_T arr, void *elem, void *cl)
+void bw_to_color(int i, int j, A2Methods_Object *arr, void *elem, void *cl)
 {
     (void) elem;
     (void) cl;
